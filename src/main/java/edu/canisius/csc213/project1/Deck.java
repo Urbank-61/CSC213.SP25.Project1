@@ -15,15 +15,31 @@ public class Deck {
      * @param size The number of cards in the deck.
      * @throws IllegalArgumentException if size is invalid.
      */
+
+
+     // TODO: Validate size (must be a multiple of 4 and at most 52).
+     // TODO: Initialize the deck with the correct cards.
     public Deck(int size) {
-        // TODO: Validate size (must be a multiple of 4 and at most 52).
-        // TODO: Initialize the deck with the correct cards.
+        if (size % 4 != 0 || size > 52 || size <= 0){
+            throw new IllegalArgumentException("Size must be a multiple of 4 and between 4 and 52.");
+        }
+        cards new ArrayList<>();
+        int cardTypes = size / 4;
+
+        for (Card.Rank rank : Card.Rank.values()){
+            if (cardTypes-- == 0){
+                for(Card.Suit suit : Card.Suit.values()){
+                    cards.add(new Card(suit, rank));
+                }
+            }
+        }
     }
 
     /**
      * Shuffles the deck.
      */
     public void shuffle() {
+        Collection.shuffle(cards);
         // TODO: Implement shuffle logic.
     }
 
@@ -35,7 +51,10 @@ public class Deck {
      */
     public Card draw() {
         // TODO: Implement draw logic.
-        return null;
+        if (cards.isEmpty()){
+            throw new NoSuchElementException("Deck is empty");
+        }
+        return cards.remove(0);
     }
 
     /**
@@ -44,7 +63,8 @@ public class Deck {
      * @return The number of cards left.
      */
     public int size() {
+
         // TODO: Implement size method.
-        return 0;
+        return cards.size();
     }
 }
