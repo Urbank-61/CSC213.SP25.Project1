@@ -54,7 +54,7 @@ public class Card {
         Card otherCard = (Card) obj;
         return suit == otherCard.suit && rank == otherCard.rank;
     }
-    }
+    
 
     @Override
     public int hashCode(){
