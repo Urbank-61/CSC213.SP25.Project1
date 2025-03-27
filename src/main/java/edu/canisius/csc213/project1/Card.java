@@ -14,7 +14,7 @@ public class Card {
         JACK, QUEEN, KING, ACE 
     }
 
-    // TODO: Define private fields for suit and rank.
+    // Define private fields for suit and rank.
     private final Suit suit;
     private final Rank rank;
 
@@ -24,7 +24,7 @@ public class Card {
         this.suit = suit;
     }
 
-    // TODO: Implement getters for suit and rank.
+    // Implement getters for suit and rank.
     public Suit getSuit(){
         return this.suit;
     }
@@ -34,14 +34,14 @@ public class Card {
 
     }
 
-    // TODO: Override toString() to return a readable format.
+    //Override toString() to return a readable format.
     @Override
     public String toString(){
         String outPut = this.rank + " of " + this.suit;
         return outPut;
     }
 
-    // TODO: Override equals() and hashCode() for comparisons./
+    // Override equals() and hashCode() for comparisons./
     @Override
     public boolean equals(Object obj){
         if (this == obj){

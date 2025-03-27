@@ -22,3 +22,5 @@ jar -cvfe $JAR_FILE $MAIN_CLASS -C $OUT_DIR .
 
 # Done!
 echo "✅ Build complete! Run it with: java -jar $JAR_FILE"
+
+
